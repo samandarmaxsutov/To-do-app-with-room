@@ -2,36 +2,74 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph.xml"
+    android:id="@+id/nav_graph"
     app:startDestination="@id/splashScreen">
 
     <fragment
+        tools:layout="@layout/screen_splash"
         android:id="@+id/splashScreen"
-        android:name="uz.it_school_.todoappwithroom.ui.screens.splash.SplashScreen"
-        android:label="fragment_saplash_screen"
-        tools:layout="@layout/fragment_saplash_screen" >
-        <action
-            android:id="@+id/action_splashScreen_to_homeScreen"
-            app:destination="@id/homeScreen"
-            app:popUpTo="@id/nav_graph.xml" />
+        android:name="uz.it_school_.todoappwithroom.view.screen.SplashScreen"
+        android:label="SplashScreen" >
         <action
             android:id="@+id/action_splashScreen_to_introScreen"
             app:destination="@id/introScreen"
-            app:popUpTo="@id/nav_graph.xml" />
+            app:popUpTo="@id/nav_graph" />
+        <action
+            android:id="@+id/action_splashScreen_to_mainScreen"
+            app:destination="@id/mainScreen"
+            app:popUpTo="@id/nav_graph" />
     </fragment>
     <fragment
-        android:id="@+id/homeScreen"
-        android:name="uz.it_school_.todoappwithroom.ui.screens.home.HomeScreen"
-        android:label="fragment_home_screen"
-        tools:layout="@layout/fragment_home_screen" />
-    <fragment
-        android:id="@+id/introScreen"
-        android:name="uz.it_school_.todoappwithroom.ui.screens.intro.IntroScreen"
-        android:label="fragment_intro_screen"
-        tools:layout="@layout/fragment_intro_screen" >
+        tools:layout="@layout/screen_main"
+        android:id="@+id/mainScreen"
+        android:name="uz.it_school_.todoappwithroom.view.screen.MainScreen"
+        android:label="MainScreen" >
         <action
-            android:id="@+id/action_introScreen_to_homeScreen"
-            app:destination="@id/homeScreen"
-            app:popUpTo="@id/nav_graph.xml" />
+            android:id="@+id/action_mainScreen_to_addScreen"
+            app:destination="@id/addScreen" />
+        <action
+            android:id="@+id/action_mainScreen_to_readScreen"
+            app:destination="@id/readScreen" />
+        <action
+            android:id="@+id/action_mainScreen_to_editScreen"
+            app:destination="@id/editScreen" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/screen_intro"
+        android:id="@+id/introScreen"
+        android:name="uz.it_school_.todoappwithroom.view.screen.IntroScreen"
+        android:label="IntroScreen" >
+        <action
+            android:id="@+id/action_introScreen_to_mainScreen"
+            app:destination="@id/mainScreen"
+            app:popUpTo="@id/nav_graph" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/screen_add_todo"
+        android:id="@+id/addScreen"
+        android:name="uz.it_school_.todoappwithroom.view.screen.AddScreen"
+        android:label="AddScreen" />
+    <fragment
+        tools:layout="@layout/page_to_do"
+        android:id="@+id/toDoPage"
+        android:name="uz.it_school_.todoappwithroom.view.pages.ToDoPage"
+        android:label="ToDoPage" />
+    <fragment
+        tools:layout="@layout/screen_read_to_do"
+        android:id="@+id/readScreen"
+        android:name="uz.it_school_.todoappwithroom.view.screen.ReadScreen"
+        android:label="ReadScreen" >
+        <argument
+            android:name="data"
+            app:argType="uz.it_school_.todoappwithroom.data.room.entites.ToDoEntity" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/screen_edit_todo"
+        android:id="@+id/editScreen"
+        android:name="uz.it_school_.todoappwithroom.view.screen.EditScreen"
+        android:label="EditScreen" >
+        <argument
+            android:name="data"
+            app:argType="uz.it_school_.todoappwithroom.data.room.entites.ToDoEntity" />
     </fragment>
 </navigation>

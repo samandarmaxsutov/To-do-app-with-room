@@ -1,10 +1,20 @@
 package uz.it_school_.todoappwithroom.data.room.daos
 
-import androidx.room.Dao
-import androidx.room.Query
+import androidx.lifecycle.LiveData
+import androidx.room.*
+import uz.it_school_.todoappwithroom.data.room.entites.ToDoEntity
 
 @Dao
-interface ToDoDao {
+interface  ToDoDao {
+    @Query("select * from ToDoEntity")
+    fun getAll():LiveData<List<ToDoEntity>>
+    @Insert
+    fun insert(data:ToDoEntity)
 
+    @Delete
+    fun delete(data:ToDoEntity)
+
+    @Update
+    fun update(data:ToDoEntity)
 
 }

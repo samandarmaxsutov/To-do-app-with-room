@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.viewpager2.widget.ViewPager2
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/viewPager2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:background="#003949AB"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/layout"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+        <com.google.android.material.tabs.TabLayout
+
+            android:background="?selectableItemBackgroundBorderless"
+            android:layout_weight="1"
+            app:tabBackground="@drawable/tab_selector"
+            app:tabGravity="start"
+            app:tabIndicatorHeight="0dp"
+            android:id="@+id/tab_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.button.MaterialButton
+
+            android:backgroundTint="@color/button_color"
+            android:src="@drawable/right_arrow"
+            android:textColor="#FFFFFF"
+            android:textAllCaps="true"
+            android:text="next"
+            android:gravity="center"
+
+            android:id="@+id/next"
+            android:layout_gravity="end"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:tint="#A6F4511E" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
